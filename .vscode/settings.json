@@ -1,0 +1,12 @@
+{
+    "[javascript]": {
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "schroeter.prettier-vscode-space-parenthesis",
+    },
+    "editor.codeActionsOnSave": {
+      "source.fixAll.tslint": true
+    },
+    "git.ignoreLimitWarning": true,
+    "search.usePCRE2": true,
+  }
+  

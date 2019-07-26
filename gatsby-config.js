@@ -1,3 +1,11 @@
+// locate environement file based on NODE_END
+const currentEnv = process.env.GATSBY_ACTIVE_ENV ||  process.env.NODE_ENV || 'developement';
+console.log('currentEnv',currentEnv);
+// load environement configs
+require("dotenv").config({
+  path: `.env.${currentEnv}`
+});
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Starter Blog`,
@@ -72,6 +80,13 @@ module.exports = {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`,
+      },
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
   ],
